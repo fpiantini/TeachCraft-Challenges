@@ -1,7 +1,7 @@
 import time
 import mcpi.minecraft as minecraft
 
-mc = minecraft.Minecraft.create(address="192.168.12.10", name="Piedo@piedone")
+mc = minecraft.Minecraft.create(address="192.168.12.10", name="talete")
 
 acqua_ferma = 9
 acqua_corrente = 8
