@@ -1,35 +1,42 @@
+# coding=utf-8
 import time
-import mcpi.minecraft as minecraft
 
+import mcpi.minecraft as minecraft
 mc = minecraft.Minecraft.create(address="192.168.12.10", name="rodmcban")
 
-
-#This is the minecraft block ID of the flower block.
-# see http://minecraft-ids.grahamedgecombe.com/
-# for all the block types (or see below)
+# I blocchi utilizzati in Minecraft hanno un codice numerico.
+# L'elenco dei codici è reperibile al seguente indirizzo:
+#    http://minecraft-ids.grahamedgecombe.com/
+#
+# Utilizziamo il blocco 40, che rappresenta dei funghi:
 block = 40
 
-print "Before loop."
+print "Prima del ciclo."
 
 while True:
-	#Retrieve the current player's X, Y, and Z coordinates
-	pos = mc.player.getPos()
-	#Store the current player's coordinates in our variables x/y/z
-	x = pos.x
-	y = pos.y
-	z = pos.z
-	# Set the block at the x/y/z coordinates of the
-	# current player to the block id we chose above
-	mc.setBlock(x-1, y, z, block)
-	# Wait for two tenths of a second,
-	# then jump back to the top of the while loop.
-	print "Position = ", int(x), ", ", int(y), ", ", int(z), " --- LOOPING, waiting 0.2 seconds"
-	time.sleep (0.2)
+    # Recupera la posizione corrente del giocatore (coordinate X, Y e Z)
+    # e le salva nella variabile pos:
+    pos = mc.player.getPos()
+    
+    # Estrae dalla variabile pos il valore delle coordinate
+    # e le salva nelle variabili x, y, z
+    x = pos.x
+    y = pos.y
+    z = pos.z
+    
+    # 
+    # Cambia il blocco che si trova immediatamente dietro
+    # il personaggio al tipo di blocco che abbiamo scelto
+    # in precedenza
+    mc.setBlock(x-1, y, z, block)
+    
+    # Usa la funzione print per stampare la posizione del giocatore 
+    # e quindi torna all'inizio del ciclo
+    print "Posizione = ", int(x), ", ", int(y), ", ", int(z), " ---  Aspettiamo 0.2 secondi e ripetiamo il ciclo"
+    time.sleep (0.2)
 
 
-
-print "end of loop"
-
+print "fuori dal loop"
 
 
 
