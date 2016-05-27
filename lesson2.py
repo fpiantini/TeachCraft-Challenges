@@ -1,7 +1,7 @@
 import time
 import mcpi.minecraft as minecraft
 
-mc = minecraft.Minecraft.create(address="192.168.12.10", name="talete")
+mc = minecraft.Minecraft.create(address="127.0.0.1", name="talete")
 
 
 #This is the minecraft block ID of the flower block.
