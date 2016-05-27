@@ -1,16 +1,16 @@
 #!/bin/bash
 
 if [ $# -lt 1 ]; then
-  echo "please specity a Minecraft player name"
+  echo "please specity a Minecraft server IP"
   exit 1
 fi
 
-newname=$1
-tmpfile=/tmp/newplayer.py
+newip=$1
+tmpfile=/tmp/newip.py
 
 for file in *.py; do
   rm -f $tmpfile
-  cat $file | sed "s/talete/$newname/" > $tmpfile
+  cat $file | sed 's/address="\([^"]*\)"/address="'${newip}'"/' > $tmpfile
   rm -f $file.py.saved
   mv $file $file.py.saved
   mv $tmpfile $file
