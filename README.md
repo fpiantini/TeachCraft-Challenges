@@ -33,7 +33,19 @@ My Minecraft server is located at
 
 [Lesson 7](https://github.com/teachthenet/TeachCraft-Challenges/blob/master/lesson_7.md): Create a magic system that listens to Minecraft chat, and executes your pre-defined spells!
 
-[(Advanced) Lesson 8](https://github.com/teachthenet/TeachCraft-Challenges/blob/master/lesson8/lesson8.py): Learn how to import an image into minecraft pixel art using Python Imaging Library.
+### Examples / Additional Follow-up
+
+[Import Image](https://github.com/teachthenet/TeachCraft-Challenges/blob/master/example-import-image/script.py): Learn how to import an image into minecraft pixel art using Python Imaging Library.
+
+[Import 3D Model](https://github.com/teachthenet/TeachCraft-Challenges/blob/master/example-import-3d-image/script.py): Learn how to import a 3d model (such as those used with 3d printers) into Minecraft!
+
+[Build a mini-game: Lavatrap](http://www.stuffaboutcode.com/2015/09/minecraft-game-tutorial-lavatrap-pycon.html) [Link 2](https://docs.google.com/document/d/19YVesJJFS6cg4Ndep7F-TS02CpS0qpN1hlSlv6mgISQ/edit) [Solution](https://github.com/martinohanlon/minecraft-lavatrap/blob/master/lavatrap.py)
+
+[Build An Moving Clock](https://github.com/martinohanlon/minecraft-clock/blob/master/minecraft-clock.py)
+
+[Star Wars Animated](https://github.com/martinohanlon/minecraft-starwars)
+
+[Auto-bridge](http://www.stuffaboutcode.com/2013/02/raspberry-pi-minecraft-auto-bridge.html) [Link 2](https://github.com/martinohanlon/minecraft-bridge)
 
 ### Want to host your own server / run a server locally?
 - You want to switch to [this repo](https://github.com/teachthenet/TeachCraft-Server)
