@@ -1,8 +1,7 @@
-from __future__ import absolute_import
 import socket
 import select
 import sys
-from .util import flatten_parameters_to_string
+from util import flatten_parameters_to_string
 
 """ @author: Aron Nieminen, Mojang AB"""
 
@@ -36,8 +35,7 @@ class Connection:
         #print "s",s
         self.drain()
         self.lastSent = s
-        """self.socket.sendall(s)"""
-        self.socket.sendall(s.encode('ascii'))
+        self.socket.sendall(s)
 
     def receive(self):
         """Receives data. Note that the trailing newline '\n' is trimmed"""

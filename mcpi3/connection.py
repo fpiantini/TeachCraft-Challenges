@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import socket
 import select
 import sys
@@ -36,7 +35,6 @@ class Connection:
         #print "s",s
         self.drain()
         self.lastSent = s
-        """self.socket.sendall(s)"""
         self.socket.sendall(s.encode('ascii'))
 
     def receive(self):

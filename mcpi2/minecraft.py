@@ -1,11 +1,9 @@
-from __future__ import absolute_import
-from .connection import Connection
-from .vec3 import Vec3
-from .event import BlockEvent, ChatEvent
-from .block import Block
+from connection import Connection
+from vec3 import Vec3
+from event import BlockEvent, ChatEvent
+from block import Block
 import math
-from .util import flatten
-from six.moves import map
+from util import flatten
 
 """ Minecraft PI low level api v0.1_1
 
@@ -42,7 +40,7 @@ class CmdPositioner:
     def getPos(self, id):
         """Get entity position (entityId:int) => Vec3"""
         s = self.conn.sendReceive(self.pkg + ".getPos", id)
-        return Vec3(*list(map(float, s.split(","))))
+        return Vec3(*map(float, s.split(",")))
 
     def setPos(self, id, *args):
         """Set entity position (entityId:int, x,y,z)"""
@@ -51,7 +49,7 @@ class CmdPositioner:
     def getTilePos(self, id):
         """Get entity tile position (entityId:int) => Vec3"""
         s = self.conn.sendReceive(self.pkg + ".getTile", id)
-        return Vec3(*list(map(int, s.split(","))))
+        return Vec3(*map(int, s.split(",")))
 
     def setTilePos(self, id, *args):
         """Set entity tile position (entityId:int) => Vec3"""
@@ -60,7 +58,7 @@ class CmdPositioner:
     def getDirection(self, id):
         """Get entity direction (entityId:int) => Vec3"""
         s = self.conn.sendReceive(self.pkg + ".getDirection", id)
-        return Vec3(*list(map(float, s.split(","))))
+        return Vec3(*map(float, s.split(",")))
 
     def getRotation(self, id):
         """get entity rotation (entityId:int) => float"""
@@ -137,7 +135,7 @@ class CmdEvents:
         """Only triggered by sword => [BlockEvent]"""
         s = self.conn.sendReceive("events.block.hits")
         events = [e for e in s.split("|") if e]
-        return [BlockEvent.Hit(*list(map(int, e.split(",")))) for e in events]
+        return [BlockEvent.Hit(*map(int, e.split(","))) for e in events]
 
     def pollChatPosts(self):
         """Triggered by posts to chat => [ChatEvent]"""
@@ -162,14 +160,14 @@ class Minecraft:
     def getBlockWithData(self, *args):
         """Get block with data (x,y,z) => Block"""
         ans = self.conn.sendReceive("world.getBlockWithData", intFloor(args))
-        return Block(*list(map(int, ans.split(","))))
+        return Block(*map(int, ans.split(",")))
     """
         @TODO
     """
     def getBlocks(self, *args):
         """Get a cuboid of blocks (x0,y0,z0,x1,y1,z1) => [id:int]"""
         s = self.conn.sendReceive("world.getBlocks", intFloor(args))
-        return list(map(int, s.split(",")))
+        return map(int, s.split(","))
 
     def setBlock(self, *args):
         """Set block (x,y,z,id,[data])"""
@@ -186,7 +184,7 @@ class Minecraft:
     def getPlayerEntityIds(self):
         """Get the entity ids of the connected players => [id:int]"""
         ids = self.conn.sendReceive("world.getPlayerIds")
-        return list(map(int, ids.split("|")))
+        return map(int, ids.split("|"))
 
     def getPlayerEntityId(self, name):
         """Get the entity id of the named player => [id:int]"""
