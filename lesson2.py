@@ -2,7 +2,7 @@
 import time
 
 import mcpi.minecraft as minecraft
-mc = minecraft.Minecraft.create(address="192.168.12.10", name="rodmcban")
+mc = minecraft.Minecraft.create(address="192.168.2.107", name="rodmcban")
 
 # I blocchi utilizzati in Minecraft hanno un codice numerico.
 # L'elenco dei codici è reperibile al seguente indirizzo:
@@ -11,7 +11,7 @@ mc = minecraft.Minecraft.create(address="192.168.12.10", name="rodmcban")
 # Utilizziamo il blocco 40, che rappresenta dei funghi:
 block = 40
 
-print "Prima del ciclo."
+print("Prima del ciclo.")
 
 while True:
     # Recupera la posizione corrente del giocatore (coordinate X, Y e Z)
@@ -32,11 +32,11 @@ while True:
     
     # Usa la funzione print per stampare la posizione del giocatore 
     # e quindi torna all'inizio del ciclo
-    print "Posizione = ", int(x), ", ", int(y), ", ", int(z), " ---  Aspettiamo 0.2 secondi e ripetiamo il ciclo"
+    print("Posizione = ", int(x), ", ", int(y), ", ", int(z), " ---  Aspettiamo 0.2 secondi e ripetiamo il ciclo")
     time.sleep (0.2)
 
 
-print "fuori dal loop"
+print("fuori dal loop")
 
 
 

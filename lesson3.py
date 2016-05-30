@@ -1,7 +1,7 @@
 import time
 import mcpi.minecraft as minecraft
 
-mc = minecraft.Minecraft.create(address="192.168.12.10", name="rodmcban")
+mc = minecraft.Minecraft.create(address="192.168.2.107", name="rodmcban")
 
 acqua_ferma = 9
 acqua_corrente = 8
